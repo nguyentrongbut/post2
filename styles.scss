@@ -1,0 +1,67 @@
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    background-color: #f3f3f3;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+@mixin flexbox(
+    $align: flex-start,
+    $justify: flex-start,
+    $flex-direction: row,
+    $wrap: no-wrap
+) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $flex-direction;
+    flex-wrap: $wrap;
+}
+
+.post {
+    padding: 2rem;
+    margin: 5rem auto;
+    max-width: 80rem;
+    background-color: #fff;
+    border-radius: 2rem;
+    @include flexbox(center);
+    &__media {
+        width: 10rem;
+        height: 10rem;
+        border-radius: inherit;
+        flex-shrink: 0;
+    }
+    &__content {
+        // width: calc(100% - 10rem);
+        // flex-grow: 1;
+        width: 100%;
+    }
+}
